@@ -35,7 +35,8 @@ export default function AboutPage() {
           <p className="text-gray-300">
             PlacementAssist was created with a simple mission: to provide
             students with a comprehensive, accessible, and structured resource
-            for placement preparation. We believe that every student deserves
+            for placement preparation.It will help to manage all your progress at one place. 
+            We believe that every student deserves
             access to quality learning materials that can help them secure their
             dream job.
           </p>
