@@ -11,7 +11,6 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   title: "PlacementAssist - Your One-go Site for Placement Preparation",
   description: "Designed for Students | Static Site with MDX | Interactive UI",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
