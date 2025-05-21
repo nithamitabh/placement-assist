@@ -1,41 +1,64 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
-import { ChevronDown, Code, BookOpen, Brain, MessageSquare, Menu, X } from "lucide-react"
-import { ThemeToggle } from "@/components/theme-toggle"
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import {
+  ChevronDown,
+  Code,
+  BookOpen,
+  Brain,
+  MessageSquare,
+  Menu,
+  X,
+} from "lucide-react";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     // Check if user is logged in as guest
-    const user = localStorage.getItem("user")
+    const user = localStorage.getItem("user");
     if (user === "guest") {
-      setIsLoggedIn(true)
+      setIsLoggedIn(true);
     }
-  }, [])
+  }, []);
 
   const handleGuestLogin = () => {
-    localStorage.setItem("user", "guest")
-    setIsLoggedIn(true)
-  }
+    localStorage.setItem("user", "guest");
+    setIsLoggedIn(true);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-800 bg-gray-950/80 backdrop-blur-md">
       <div className="container mx-auto flex h-16 items-center justify-between px-4">
         <div className="flex items-center">
           <Link href="/" className="flex items-center">
-            <span className="text-2xl font-bold text-green-400 neon-text">PlacementAssist</span>
+            <span className="text-2xl font-bold text-green-400 neon-text">
+              PlacementAssist
+            </span>
           </Link>
         </div>
 
         {/* Mobile menu button */}
-        <button className="md:hidden" onClick={() => setIsOpen(!isOpen)} aria-label="Toggle menu">
-          {isOpen ? <X className="h-6 w-6 text-green-400" /> : <Menu className="h-6 w-6 text-green-400" />}
+        <button
+          className="md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? (
+            <X className="h-6 w-6 text-green-400" />
+          ) : (
+            <Menu className="h-6 w-6 text-green-400" />
+          )}
         </button>
 
         {/* Desktop Navigation */}
@@ -147,43 +170,64 @@ export default function Navbar() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="bg-gray-900 border border-gray-800 text-gray-200 shadow-[0_0_10px_rgba(16,185,129,0.3)]">
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=dp" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=dp"
+                  className="hover:text-green-400"
+                >
                   DP
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=graph" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=graph"
+                  className="hover:text-green-400"
+                >
                   Graph
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=sliding-window" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=sliding-window"
+                  className="hover:text-green-400"
+                >
                   Sliding Window
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=sorting" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=sorting"
+                  className="hover:text-green-400"
+                >
                   Sorting
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=arrays" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=arrays"
+                  className="hover:text-green-400"
+                >
                   Arrays
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=trees" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=trees"
+                  className="hover:text-green-400"
+                >
                   Trees
                 </Link>
               </DropdownMenuItem>
               <DropdownMenuItem asChild>
-                <Link href="/problems?topic=linked-list" className="hover:text-green-400">
+                <Link
+                  href="/problems?topic=linked-list"
+                  className="hover:text-green-400"
+                >
                   Linked List
                 </Link>
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          
+
           {/* New Sections */}
           <Link href="/mock-interview">
             <Button
@@ -198,7 +242,7 @@ export default function Navbar() {
         {/* Theme Toggle and Login Button */}
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
-          
+
           {isLoggedIn ? (
             <Button
               variant="outline"
@@ -223,16 +267,28 @@ export default function Navbar() {
               <div className="border-b border-gray-800 pb-2">
                 <p className="text-green-400 font-medium mb-2">Core</p>
                 <div className="grid grid-cols-2 gap-2">
-                  <Link href="/blogs/cn" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/cn"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     CN
                   </Link>
-                  <Link href="/blogs/oops" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/oops"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     OOPs
                   </Link>
-                  <Link href="/blogs/os" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/os"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     OS
                   </Link>
-                  <Link href="/blogs/dbms" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/dbms"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     DBMS
                   </Link>
                 </div>
@@ -241,13 +297,22 @@ export default function Navbar() {
               <div className="border-b border-gray-800 pb-2">
                 <p className="text-green-400 font-medium mb-2">Aptitude</p>
                 <div className="grid grid-cols-2 gap-2">
-                  <Link href="/blogs/verbal" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/verbal"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     Verbal
                   </Link>
-                  <Link href="/blogs/quant" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/quant"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     Quant
                   </Link>
-                  <Link href="/blogs/logical" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/logical"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     Logical
                   </Link>
                 </div>
@@ -256,7 +321,24 @@ export default function Navbar() {
               <div className="border-b border-gray-800 pb-2">
                 <p className="text-green-400 font-medium mb-2">Soft Skills</p>
                 <div className="grid grid-cols-2 gap-2">
-                  <Link href="/blogs/english" className="text-gray-300 hover:text-green-400">
+                  <Link
+                    href="/blogs/english"
+                    className="text-gray-300 hover:text-green-400"
+                  >
                     English
                   </Link>
-                  <Link href="/blogs/hr\
+                  <Link
+                    href="/blogs/hr"
+                    className="text-gray-300 hover:text-green-400"
+                  >
+                    HR Tricky
+                  </Link>
+                </div>
+              </div>
+            </nav>
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}

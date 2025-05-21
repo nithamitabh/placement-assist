@@ -1,11 +1,15 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react"
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react";
 
 export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">
-      <Button asChild variant="outline" className="mb-6 border-green-500/50 text-green-400 hover:bg-green-500/10">
+      <Button
+        asChild
+        variant="outline"
+        className="mb-6 border-green-500/50 text-green-400 hover:bg-green-500/10"
+      >
         <Link href="/">
           <ArrowLeft className="mr-2 h-4 w-4" />
           Back to Home
@@ -19,7 +23,8 @@ export default function AboutPage() {
             About PlacementAssist
           </h1>
           <p className="text-gray-400 text-center max-w-2xl mx-auto">
-            A platform designed to help students prepare for placement interviews and technical assessments.
+            A platform designed to help students prepare for placement
+            interviews and technical assessments.
           </p>
         </div>
       </div>
@@ -28,13 +33,16 @@ export default function AboutPage() {
         <div className="space-y-6">
           <h2 className="text-2xl font-bold text-green-400">Our Mission</h2>
           <p className="text-gray-300">
-            PlacementAssist was created with a simple mission: to provide students with a comprehensive, accessible, and
-            structured resource for placement preparation. We believe that every student deserves access to quality
-            learning materials that can help them secure their dream job.
+            PlacementAssist was created with a simple mission: to provide
+            students with a comprehensive, accessible, and structured resource
+            for placement preparation. We believe that every student deserves
+            access to quality learning materials that can help them secure their
+            dream job.
           </p>
           <p className="text-gray-300">
-            Our platform combines theoretical knowledge with practical problem-solving to ensure that students are
-            well-prepared for both technical interviews and aptitude tests.
+            Our platform combines theoretical knowledge with practical
+            problem-solving to ensure that students are well-prepared for both
+            technical interviews and aptitude tests.
           </p>
 
           <h2 className="text-2xl font-bold text-green-400 pt-4">Features</h2>
@@ -49,17 +57,24 @@ export default function AboutPage() {
         </div>
 
         <div className="space-y-6">
-          <h2 className="text-2xl font-bold text-green-400">About the Creator</h2>
+          <h2 className="text-2xl font-bold text-green-400">
+            About the Creator
+          </h2>
           <p className="text-gray-300">
-            Hi, I'm Amitabh, a passionate developer and educator. I created PlacementAssist based on my own experience
-            with the placement process and the challenges I faced while preparing for technical interviews.
+            Hi, I'm Amitabh, a passionate developer and student. I created
+            PlacementAssist based on my own experience with the placement
+            process and the challenges I faced while preparing for technical
+            interviews.
           </p>
           <p className="text-gray-300">
-            My goal is to continuously improve this platform by adding more resources, practice problems, and
-            interactive features to make the learning experience even better.
+            My goal is to continuously improve this platform by adding more
+            resources, practice problems, and interactive features to make the
+            learning experience even better.
           </p>
 
-          <h2 className="text-2xl font-bold text-green-400 pt-4">Connect With Me</h2>
+          <h2 className="text-2xl font-bold text-green-400 pt-4">
+            Connect With Me
+          </h2>
           <div className="flex flex-col space-y-4">
             <Button
               asChild
@@ -67,7 +82,7 @@ export default function AboutPage() {
               className="border-green-500/50 text-green-400 hover:bg-green-500/10 justify-start"
             >
               <Link
-                href="https://github.com/Amitabh2025"
+                href="https://github.com/nithamitabh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
@@ -82,7 +97,7 @@ export default function AboutPage() {
               className="border-green-500/50 text-green-400 hover:bg-green-500/10 justify-start"
             >
               <Link
-                href="https://linkedin.com/in/amitabh2025"
+                href="https://www.linkedin.com/in/amitabh-kumar-392671231"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center"
@@ -96,7 +111,10 @@ export default function AboutPage() {
               variant="outline"
               className="border-green-500/50 text-green-400 hover:bg-green-500/10 justify-start"
             >
-              <Link href="mailto:contact@placementassist.com" className="flex items-center">
+              <Link
+                href="mailto:harsh36@gmail.com"
+                className="flex items-center"
+              >
                 <Mail className="mr-2 h-5 w-5" />
                 Email Me
               </Link>
@@ -108,8 +126,9 @@ export default function AboutPage() {
       <div className="mt-16 text-center max-w-2xl mx-auto">
         <h2 className="text-2xl font-bold text-green-400 mb-4">Contribute</h2>
         <p className="text-gray-300 mb-6">
-          PlacementAssist is an open-source project. If you'd like to contribute by adding more resources, fixing bugs,
-          or suggesting improvements, please visit our GitHub repository.
+          PlacementAssist is an open-source project. If you'd like to contribute
+          by adding more resources, fixing bugs, or suggesting improvements,
+          please visit our GitHub repository.
         </p>
         <Button
           asChild
@@ -127,5 +146,5 @@ export default function AboutPage() {
         </Button>
       </div>
     </div>
-  )
+  );
 }
